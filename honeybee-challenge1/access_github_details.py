@@ -43,7 +43,7 @@ for item in data:
       github_dic[i]=values
       i=i+1
 
-   with open("file.csv","a") as csv_file:
+   with open("/tmp/file.csv","a") as csv_file:
       csv_writer = csv.writer(csv_file)
       for i in github_dic :
          list = github_dic[i]
