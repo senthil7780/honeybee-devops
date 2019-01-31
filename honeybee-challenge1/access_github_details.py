@@ -43,14 +43,13 @@ for item in data:
       github_dic[i]=values
       i=i+1
 
-   with open("/tmp/file.csv","a") as csv_file:
+   with open("file.csv","w") as csv_file:
       csv_writer = csv.writer(csv_file)
       for i in github_dic :
          list = github_dic[i]
          csv_writer.writerow(list)
-      
-print(github_dic)
-csv_file.close()
+
+   csv_file.close()
 
 
 
