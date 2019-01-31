@@ -7,4 +7,6 @@ RUN pip install requests
 
 WORKDIR /tmp/
 
-CMD [ "python", "./access_github_details.py"]
+#ENTRYPOINT [ "python", "./access_github_details.py"]
+
+
