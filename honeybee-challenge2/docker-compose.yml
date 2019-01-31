@@ -3,7 +3,7 @@ services:
 
   fluentd:
     build: .
-    image: senthil7780/fluentd:latest
+    image: senthil7780/fluentd-elastic-plugin:latest
     ports:
       - "24224:24224"
       - "24224:24224/udp"

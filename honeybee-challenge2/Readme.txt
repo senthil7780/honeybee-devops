@@ -9,7 +9,7 @@ minikube start
 
 #Please run the following command to start the pods
 
-kubectl create -f elasticsearch-service.yaml,fluentd-service.yaml,kibana-service.yaml,nginx-service.yaml,elasticsearch-deployment.yaml,fluentd-deployment.yaml,fluentd-claim0-persistentvolumeclaim.yaml,kibana-deployment.yaml,nginx-deployment.yaml,nginx-claim0-persistentvolumeclaim.yaml
+kubectl create -f ./k8s/elasticsearch-service.yaml,./k8s/fluentd-service.yaml,./k8s/kibana-service.yaml,./k8s/nginx-service.yaml,./k8s/elasticsearch-deployment.yaml,./k8s/fluentd-deployment.yaml,./k8s/fluentd-claim0-persistentvolumeclaim.yaml,./k8s/kibana-deployment.yaml,./k8s/nginx-deployment.yaml,./k8s/nginx-claim0-persistentvolumeclaim.yaml
 
 #To check the pod status
 
