@@ -7,4 +7,4 @@ RUN pip install requests
 
 WORKDIR /tmp/
 
-CMD [ "python", "./access_github_details.py", "ls -lrta" ]
+CMD [ "python", "./access_github_details.py"]
