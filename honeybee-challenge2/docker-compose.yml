@@ -1,0 +1,42 @@
+version: "3.3"
+services:
+
+  fluentd:
+    build: .
+    image: senthil7780/fluentd:latest
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    links:  
+      - "elasticsearch"
+    volumes:
+      - ./fluentd/etc:/fluentd/etc 
+
+  elasticsearch:
+    image: 'docker.elastic.co/elasticsearch/elasticsearch:6.6.0'
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - xpack.security.enabled=false 
+
+  kibana:
+    image: 'docker.elastic.co/kibana/kibana:6.6.0'
+    ports:
+      - "5601:5601"
+    links:
+      - elasticsearch    
+
+  nginx:
+      image: nginx
+      ports:
+        - "80:80"
+      volumes:
+        - ./nginx-static-files:/usr/share/nginx/html
+      logging:
+        driver: fluentd  
+        options:
+          fluentd-address: localhost:24224
+          tag: httpd.access
+      links:  
+        - "fluentd" 
